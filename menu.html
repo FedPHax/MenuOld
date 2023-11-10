@@ -1,0 +1,787 @@
+
+<html>
+<head>
+	<title>Menu LQM Yetti</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.7/lib/theme-chalk/index.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
+	<script src="https://unpkg.com/element-ui@2.15.7/lib/index.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	
+	
+ </head>
+
+<body>
+	<script>
+		function hd(click){
+            Swal.fire({
+
+        text: 'Bật chức năng này nếu bạn muốn chơi lộ trong 1 game đấu, hết trận sẽ bị văng game để đảm bảo an toàn. LƯU Ý: CHỐNG TỐ LÀ CHỐNG ĐƯỢC 1 SỐ PHIẾU TỐ CÁO, KHÔNG CÓ NGHĨA LÀ BẤT TỬ',
+
+        confirmButtonText: 'OK',
+        });}
+        function hd2(click){
+
+            Swal.fire({
+
+        text: 'Patch OK',
+
+        confirmButtonText: 'OK',
+        });
+        }
+
+        function hd3(click){
+            Swal.fire({
+        text: 'Nếu màn hình hiện bên góc trái Result:success là gửi yêu cầu thành công, ad đã nhận được yêu cầu và file mod sẽ có sau vài tiếng',
+
+        confirmButtonText: 'OK',
+        });}
+    </script>
+    <style> 
+    	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+        box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+.ayimgui {
+  border-color: #666666;
+  border-style: solid;
+  border-width: 2px;
+  position: fixed;
+  width: 360px;
+  height: 340px;
+  top: calc(50% - 180px);
+  left: calc(50% - 180px);
+  z-index: 999;
+  /* background-color:#212121; */
+  background-image: url("https://i.imgur.com/q7LVERG.png");
+  border-radius: 25px;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.onlyTitle {
+  height: 21px !important;
+}
+
+.ayimgui .aytitle {
+  border-radius: 15px;
+  text-align: center;
+  font-size: 20px;
+  background-image: url("bg.png");
+  /* background-color: #000000 ; */
+  color: #8DEEEE;
+}
+
+.ayimgui .aytitle .titleClose {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  color: #fff;
+}
+
+.ayimgui .aytitle .titleClose:hover {
+  color: #d8dfe5;
+}
+
+.ayimgui .aybody {
+  padding: 15px;
+  height: calc(100% - 21px - 15px - 15px);
+  /*减去标题高度，减去上线padding高度*/
+  overflow: auto;
+  font-size: 12px;
+}
+
+
+.aytext {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #eeeeee;
+}
+
+.el-checkbox {
+  margin: 0px;
+}
+
+.el-checkbox__label {
+  color: #000;
+}
+
+.el-checkbox__input.is-checked+.el-checkbox__label {
+  color: #409EFF;
+}
+
+.el-checkbox__inner {
+  background-color: rgb(254, 254, 254);
+  border: none;
+}
+
+
+.el-radio {
+  margin: 8px 0;
+}
+
+.el-radio__label {
+  color: #000;
+}
+
+.el-radio__input.is-checked+.el-radio__label {
+  color: #409EFF;
+}
+
+.el-radio__inner {
+  background-color: rgb(254, 254, 254);
+  border: none;
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+  background-color: rgb(254, 254, 254);
+}
+
+.el-radio__inner::after {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(58, 138, 247);
+}
+
+.onlySelect {
+  background-color: rgb(254, 254, 254);
+  border: none;
+}
+
+.onlySelect .el-select-dropdown__item {
+  color: #000;
+
+}
+
+.onlySelect .el-select-dropdown__item.hover,
+.el-select-dropdown__item:hover:hover {
+  background-color: transparent;
+}
+
+.onlySelect .popper__arrow {
+  border-bottom-color: rgb(254, 254, 254) !important;
+}
+
+.onlySelect.el-popper[x-placement^=bottom] .popper__arrow::after {
+  border-bottom-color: rgb(8254, 254, 254) !important;
+}
+
+.el-select {
+  width: 100%;
+}
+
+.el-select .el-input {
+  background-color: rgb(254, 254, 254);
+}
+
+.el-select .el-input__suffix {
+  background-color: rgb(160, 196, 243);
+  color: #000;
+  right: 0;
+}
+
+.el-select .el-select__caret {
+  color: #000;
+}
+
+.el-select .el-input__inner {
+  background-color: transparent;
+  border: none;
+  color: #000;
+}
+
+.el-select .el-input .el-select__caret {
+  color: #000;
+}
+
+/* 解决ios下拉需要点两次 */
+.el-scrollbar .el-scrollbar__bar {
+  opacity: 1 !important;
+}
+
+.el-button {
+  font-size: 14px;
+  padding: 5px 10px;
+  line-height: 14px;
+  color: #000;
+  background-color: #B8D1F2;
+}
+
+.el-button:hover {
+  opacity: .7;
+  color: #000;
+  background-color: #B8D1F2;
+}
+
+.el-button:focus,
+.el-button:hover {
+  color: #000;
+  background-color: #B8D1F2;
+}
+
+.aycollapse {
+  border:#000 1px solid;
+  width: 100%;
+  font-size: 12px;
+  background-color: #444444;
+  color: #fff;
+  border-radius: 15px;
+
+}
+.aycollapsetext{
+  font-size: 9px;
+}
+.aytab {
+  width: 100%;
+  height: 30px;
+  display:flex;
+  border-bottom: 1px solid #444444;
+  background-color: #444444;
+  border-width: 1.5px;
+  border-radius: 15px;
+  border-color: #000000;
+  border-style: solid;
+  margin-top: -8px;
+}
+
+.aytab span {
+ border-radius: 15px;
+  padding: 0 5px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #65799b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  height: 25px;
+  margin-top: 1.5px;
+  margin-left: 10px;
+  margin-right: 8px;
+  width: 100%;
+  cursor: pointer;
+}
+
+
+.el-input input {
+  background-color: rgb(254, 254, 254);
+  border: none;
+  border-radius: 0px;
+}
+    img{
+        width: 25px;
+        height: 25px;
+    }
+    .banquyen{
+        width: 305px;
+      height:30px;
+  
+    }
+    .bt2{
+background-color: #0165E1;
+border: 2px solid #000000;
+border-radius: 5px;
+color: #422800;
+cursor: pointer;
+margin-right: 5px;
+height: 30px;
+width: 30px;
+}
+.bt3{
+background-color: #229ED9;
+border: 2px solid #000000;
+border-radius: 5px;
+color: #000000;
+height: 30px;
+width: 30px;
+cursor: pointer;
+}
+.box{
+margin-top: 10px;
+
+
+}
+.aimbox{
+  margin-top: 40px;
+}
+.botbox{
+  margin-top: 10px;
+}
+.aimboxtext{
+  margin-top: 90px;
+}
+.box3{
+  text-align:center;
+}
+.boxtext{
+margin-bottom: 7px;
+}
+.VH3{
+width: 100px;;
+height: 33px;
+border-radius:5px ;
+background-color: #404041;
+border: 1px solid;
+}
+.VH3:active{
+transform: translateY(2px);
+}
+.ytb{
+width: 100px;
+height: 30px;
+}
+
+.nhapskin{
+border-radius: 5px;
+border: 1px solid;
+border-color: #000;
+width: 200px;
+height: 25px;
+}
+.enterkey2{
+border-radius: 5px;
+border: 1px solid;
+border-color: #000;
+width:30px;
+height: 25px;
+}
+.enterkey2:active{
+transform: translateY(2px);
+}
+.noti{
+  border:#000 1px solid;
+  border-radius: 5px;
+  width: max-content;
+}
+.bt1{
+  color: #d8dfe5;
+  background-color: #444444;
+  margin-top: -5px;
+  border-radius: 5px;
+  border:#000 1px solid;
+  width: 30px;
+  height: 30px;
+}
+input[type=checkbox]{
+visibility: hidden;
+vertical-align:middle;
+cursor: pointer;
+position:relative;
+text-align:justify;
+width: 40px;
+height: 40px;
+margin-top: 10px;
+margin-left: 90px;
+}
+input[type=checkbox]::after{
+position: absolute;
+top: 0;
+margin-top:2px;
+width: 20px; height: 20px;
+border: 2px solid #ffffff;
+border-radius: 8px;
+background-color: rgba(0,0,0,0);
+display: inline-block;
+visibility: visible;
+text-align: center;
+content: "";
+}
+input[type=checkbox]:checked::after{
+content: "✔️";
+border-color: rgb(0, 0, 0);
+background-color: rgb(23, 22, 22);
+font-size: 13px;
+font-weight: bold;
+}
+.contact{
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+    </style>
+	<div id="app">
+		<div :class="!ifshow?'onlyTitle ayimgui':'ayimgui'" ref="menuMain">
+			<div class="aytitle" @touchstart="titleTouchStart" @touchmove="titleTouchMove">
+			<!--  -->
+				<span class="title-age" style="text-align: center;">MENU AOV Yetti</span>
+				
+			</div>
+			<div class="aybody">
+				<div class="aytab">
+					<span @click="changeTab('one')"
+						:style="{background:tabValue==='one'?'#1e1e1e':'#444444'}">Info</span>
+					<span @click="changeTab('two')"
+						:style="{background:tabValue==='two'?'#1e1e1e':'#444444'}">Aim</span>
+                    <span @click="changeTab('three')"
+						:style="{background:tabValue==='three'?'#1e1e1e':'#444444'}">Menu</span>   
+                    <span @click="changeTab('four')"
+						:style="{background:tabValue==='four'?'#1e1e1e':'#444444'}">Menu 2</span>      
+				</div>
+
+				<div v-show="tabValue==='one'">
+					<div class="aytext">
+                        <div class="box">
+                           <b>
+							<p class="boxtext" >ANTIBAN, HACKMAP ĐÃ ĐƯỢC  BẬT KHI MỞ MENU</p>
+							<p class="boxtext" >VUI LÒNG ĐỌC KĨ CÁCH DÙNG Ở CÁC MENU</p>
+							<p class="boxtext" >HACK MAP, CAM XA, BỔ TRỢ, HIỆN ULTI ĐÃ ĐƯỢC BẬT SẴN</p>
+							<p class="boxtext" >ANTIBAN XỊN, PHANG ĐẾN CHẾT</p>
+                            <b style="color:#cacaca; font-size: 15px;">CONTACT ME ON:
+								  <a href="https://fb.com/vuxuanphong.perfect"><img class="contact" src="https://i.imgur.com/qagKCse.png" alt="buttonpng" border="0" /></a>
+								  
+							<a href="https://t.me/xfonqicy"><img class="contact" src="https://i.imgur.com/5MRtcQJ.jpg" alt="buttonpng" border="0" /></a></b>
+                
+							<!-- <img class="banquyen" src="banquyen.png" alt=""></i> -->
+							<p style="margin-top: 9px;">COPYRIGHT BY:@xfonqicy</p>
+						</div>
+						 
+					</div>
+				</div>
+
+				<div v-show="tabValue === 'two'">
+					<div class="aytext">
+						<div class="aycollapse" @click="showOption = !showOption" style="cursor:pointer">
+                            <i :class="showOption?'el-icon-caret-bottom':'el-icon-caret-right'"></i>
+                            <span>Cách dùng(VUI LÒNG ĐỌC KĨ!)</span>
+                        </div>
+                        <el-collapse-transition>
+                            <div v-show="showOption"><p class="aycollapsetext">-Aim v1: Nhấn giữ chiêu thức để kích hoạt aim.</p>
+                              <p class="aycollapsetext">-Aim v2: Xoay 360 độ, chiêu sẽ hướng về tướng địch có máu thấp nhất trên toàn bản đồ( Nếu cài đặt mục tiêu máu thấp nhất)</p>  
+                                <p class="aycollapsetext">-Aim v3: Xoay 360 độ, chiêu sẽ hướng về tướng địch có máu thấp nhất trong phạm vi chiêu thức(Nếu cài đặt mục tiêu máu thấp nhất)</p>
+                                 <p class="aycollapsetext">-KHÔNG THỂ CHUYỂN ĐỔI QUA LẠI GIỮA CÁC LOẠI AIM TRONG 1 TRẬN Aim v2 có thể bật tắt ngay trong trận</p>
+                                 <p class="aycollapsetext">-Aim v1, v3 chỉ được bật khi đã vào trận và hết trận sẽ bị văng game</p></div>
+                        </el-collapse-transition>
+
+                        <div class="aimbox">
+                            <input type="checkbox"id="cn1" onclick="aim1(this)"/><i>Aim v1</i>
+							<br>
+							<input type="checkbox" id="cn2" onclick="aim2(this)"/><i>Aim v2</i>
+							<br>
+						    <input type="checkbox"  id="cn3" onclick="aim3(this)"/><i>Aim v3</i>
+
+                        </div>
+                       
+                       
+				    </div>
+			    </div>
+
+            <div v-show="tabValue === 'three'">
+                <div class="aytext">
+                    <div class="box2">
+                    <input type="checkbox" id="cn4" onclick="showlsd(this)" /><i>Hiện Lịch Sử Đấu</i>
+					<br>
+                    <input   type="checkbox"  id="cn5" onclick="hienten(this)" /><i>Hiện Tên Cấm Chọn</i>
+                    <br>
+                    <input   type="checkbox"  id="cn6" onclick="showavt(this)" /><i>Hiện Avatar Ghép Trận</i>
+					<br>
+                    <input   type="checkbox"  id="cn7" onclick="hienrank(this)" /><i>Hiện Rank</i>
+					<br>
+                    <input  type="checkbox"  id="cn11" onclick="cheten(this)" /><i>Che tên(Trong Trận)</i>
+                    </div>
+                </div>
+                </div>
+
+                <div v-show="tabValue === 'four'">
+                    <div class="aytext">
+						<div class="aycollapse" @click="showOption = !showOption" style="cursor:pointer">
+							<i :class="showOption?'el-icon-caret-bottom':'el-icon-caret-right'"></i>
+							<span>Cách dùng(VUI LÒNG ĐỌC KĨ!)</span>
+						</div>
+						<el-collapse-transition>
+							<div  v-show="showOption"><p class="aycollapsetext">Vào đấu luyện->Chọn tướng muốn trải nghiệm skin->Bấm vào đổi tướng sau đó chọn skin muốn test</p>
+							<p class="aycollapsetext">Chức năng với máy KHÔNG được bật tắt trong trận đánh người, nếu không sẽ bị lỗi game ảo</p></div>
+						</el-collapse-transition>
+                        <div class="botbox">
+                            <h4 class="noti">Chức năng chỉ có tác dụng với máy</h4>
+                         <input  type="checkbox"  id="cn8" onclick="autowin(this)" /><i>Autowin</i>
+						 <br>
+                         <input  type="checkbox"  id="cn9" onclick="noskill(this)" /><i>Hủy Hồi Chiêu</i>
+    
+                        <h4 class="noti">Chức năng chỉ hoạt động trong đấu luyện</h4>
+                        <input  type="checkbox"  id="cn10" onclick="testskin(this)" /><i>Thử Skin trong đấu Luyện</i>
+
+                          
+                        
+                    </div>
+                    </div>			
+		</div>
+
+	</div>
+	<script>
+		setButtonImage('https://i.imgur.com/jXjAbL2.png');
+h5gg.require(7.9); 
+    var h5frida=h5gg.loadPlugin("h5frida", "Frameworks/h5frida-16.1.4.dylib");
+    if(!h5frida) throw "Đã Xảy Ra Lỗi";
+    
+    function ActiveCodePatch(fpath, vaddr, bytes) {
+        if(!h5frida.ActiveCodePatch(fpath, vaddr, bytes)) {
+            var result = h5frida.ApplyCodePatch(fpath, vaddr, bytes);
+            alert(fpath+":0x"+vaddr.toString(16)+"-修改失败!\n" + fpath+":0x"+vaddr.toString(16)+"-Download Offset Successfully!\n" + result);return false;
+        } return true;
+    }
+    function DeactiveCodePatch(fpath, vaddr, bytes) {
+        return h5frida.DeactiveCodePatch(fpath, vaddr, bytes);
+    }
+
+function aim1(input){
+    //aimv1
+    var aim1 = document.getElementById('cn1');
+    if (aim1.checked == true)
+    {
+        h5gg.searchNumber(2500, "U32","0x100000000","0x140000000");
+        h5gg.searchNearby(0, "U32","0x50");
+        h5gg.searchNearby(25000, "U32","0x50");
+        h5gg.searchNumber(0, "U32","0x100000000","0x140000000");
+        h5gg.editAll(25000, "U32");
+    }
+}
+function aim2(input)//aim
+{
+    var aim2 = document.getElementById('cn2');
+    if (aim2.checked == true)
+    {
+    ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x6247A7C, "E3008052C0035FD6"); 
+        ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x57E16AC, "E303271EC0035FD6"); 
+
+}
+else{
+      DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x6247A7C, "E3008052C0035FD6");   
+      DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x57E16AC, "E303271EC0035FD6");   
+}
+}
+function aim3(input){
+    //aimv3
+    var aim3 = document.getElementById('cn3');
+    if (aim3.checked == true)
+    {
+        ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x57E16AC, "E303271EC0035FD6"); 
+        h5gg.searchNumber(2500, "U32","0x100000000","0x150000000");
+        h5gg.searchNearby(0, "U32","0x50");
+        h5gg.searchNearby(25000, "U32","0x50");
+        h5gg.searchNumber(0, "U32","0x100000000","0x150000000");
+        h5gg.editAll(25000, "U32");
+        h5gg.clearResults();
+    }
+}
+function showlsd(input)//show lsd
+{
+    var lsd = document.getElementById('cn4');
+    if (lsd.checked == true)
+    {
+    ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5AB117C, "200080D2C0031FD6"); 
+
+}
+else {
+
+      DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5AB117C, "200080D2C0031FD6");   
+}
+}
+function hienten(input)//tenbanpick
+{
+
+    var ten = document.getElementById('cn5');
+    if (ten.checked == true)
+    {
+    ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5C8C8D4, "370080D2"); 
+
+}
+else{
+
+DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5C8C8D4, "370080D2");   
+}
+}
+function showavt(input)//avatar
+{
+    var avt = document.getElementById('cn6');
+    if (avt.checked == true)
+    {
+    ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5A8BB18, "000080D2C0031FD6"); 
+
+}
+else{
+
+      DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5A8BB18, "000080D2C0031FD6");   
+}
+}
+function hienrank(input)//hienrank
+{
+    var rank = document.getElementById('cn7');
+    if (rank.checked == true){
+    ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5D49B6C, "E10301AA"); 
+
+}
+else{
+      DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5D49B6C, "E10301AA");   
+}
+}
+
+function autowin(input)//autowin
+{
+    var auto = document.getElementById('cn8');
+    if (auto.checked == true){
+    ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x524E4B8, "200080D2C0031FD6"); 
+
+}
+else {
+
+      DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x524E4B8, "200080D2C0031FD6");   
+}
+}
+function noskill(input)//noskill
+{
+    var skill = document.getElementById('cn9');
+    if (skill.checked == true){
+    ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x521DB68, "C0031FD6"); 
+}
+else {
+
+      DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x521DB68, "C0031FD6");   
+}
+}
+function testskin(input)//skin
+{
+    var skin = document.getElementById('cn10');
+    if (skin.checked == true){
+    ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x59D0F58, "C0031FD6"); 
+}
+else{
+
+      DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x59D0F58, "C0031FD6");   
+}
+}
+function cheten(input)//cheten
+{
+    var name = document.getElementById('cn11');
+    if(name.checked==true)
+    {
+        ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x592597C, "000080D2C0031FD6"); 
+    }
+    else{
+    
+          DeactiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x592597C, "000080D2C0031FD6");   
+    }
+}
+// //hm
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x518EDB8, "E10301AA"); 
+//camera
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5F99CFC, "01102F1E"); 
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5F99CF8, "00902F1E"); 
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5F99D08, "0110201E");     
+//botro
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5E22CCC, "1F2003D5"); 
+//ulti
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5C8265C, "1F2003D5");     
+ActiveCodePatch("Frameworks/UnityFramework.framework/UnityFramework", 0x5C82700, "33008052");
+</script>
+	<script>
+		var app = new Vue({
+			el: "#app",
+			data() {
+				return {
+					ifshow: true,
+					checked: false,
+					radio: '1',
+					activeSelect: '',
+					selectOption: [{
+						value: 'Option1',//实际内容
+						label: 'golden'//显示文案
+					}, {
+						value: 'Option2',
+						label: 'eggs'
+					}],
+					input: "",
+					showOption: false,
+					tabValue: "one",
+				}
+			},
+			mounted() {
+				setWindowRect(60,60,300,300);
+
+				//设置不可拖动
+				// setWindowDrag(0, 0, 400, 80);
+    
+				var layout = function()
+				{
+					//window.orientation是设备握持方向, 不是屏幕显示方向
+					if(window.lastorientation==window.orientation) return;
+					window.lastorientation=window.orientation;
+				
+					//window.screen中的宽高不会随着屏幕旋转更新(只会在初始化的时候固定)
+					if(Math.abs(window.orientation)==90) {
+						//横屏模式
+						setWindowRect(0,0,window.screen.height,window.screen.width);
+					} else {
+						//竖屏模式
+						setWindowRect(0,0,window.screen.width,window.screen.height);
+					}
+				}
+	
+				layout(); //设置旋转屏幕时自动调整布局和画布
+				window.addEventListener("orientationchange", layout, false);
+
+				setButtonAction(function () {
+					var menu = document.querySelector("#app");
+					if (menu.style.display == 'none') {
+						menu.style.display = 'block';
+						//显示菜单之后, 设置触控不可穿透悬浮窗口
+						setWindowTouch(true);
+					} else {
+						menu.style.display = 'none';
+						//隐藏菜单之后, 设置触控穿透悬浮窗口
+						setWindowTouch(false);
+					}
+				});
+			},
+			methods: {
+				setRect(w, h, x = -1, y = -1) {
+					var boxW = w;
+					var boxH = h;
+
+					var ayMenu = this.$refs.menuMain;
+					ayMenu.style.width = `${boxW}px`;
+					ayMenu.style.height = `${boxH}px`;
+					if (x == -1) ayMenu.style.left = `calc(50% - ${boxW / 2}px)`;
+					if (y == -1) ayMenu.style.top = `calc(50% - ${boxH / 2}px)`;
+				},
+				titleTouchStart(event) {
+					this.touchStartX = parseInt(event.touches[0].clientX);
+					this.touchStartY = parseInt(event.touches[0].clientY);
+
+					var ayMenu = this.$refs.menuMain;
+					this.menuLastX = ayMenu.offsetLeft;
+					this.menuLastY = ayMenu.offsetTop;
+				},
+				titleTouchMove(event) {
+					event.preventDefault();
+					var distanceX = event.touches[0].clientX - this.touchStartX;
+					var distanceY = event.touches[0].clientY - this.touchStartY;
+
+					var ayMenu = this.$refs.menuMain;
+					ayMenu.style.left = this.menuLastX + distanceX + "px";
+					ayMenu.style.top = this.menuLastY + distanceY + "px";
+				},
+				//切换导航栏
+				changeTab(v) {
+					this.tabValue = v;
+				},
+				closeimgui() {
+					var menu = document.querySelector("#app");
+					menu.style.display = 'none';
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>
