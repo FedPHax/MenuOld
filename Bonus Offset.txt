@@ -1,0 +1,35 @@
+Aim giữ Elsu: 0x315A650
+Hàm:
+public bool IsDistanceLowerEqualAsAttacker(ActorLinker targetActor, int radius)
+Byte thay thế: E3008052C0035FD6
+
+Aim xoay Elsu: 0x315A650
+Hàm:
+public bool IsDistanceLowerEqualAsAttacker(ActorLinker targetActor, int radius)
+Byte thay thế: E3008052C0035FD6 
+public bool IsSmartUse()
+0x5A113EC
+Byte thay thế: E303271EC0035FD6
+
+Auto win bot:
+Hàm:
+public void SetHpAndEpToInitialValue(int hpPercent = 10000, int epPercent = 10000) { }
+Byte thay thế: 200080D2C0035FD6
+
+Ẩn tên
+Hàm:
+public void SetPlayerName(string playerName, bool isHostPlayer = False) { }
+Byte thay thế: C0035FD6
+
+No CD Skill
+Hàm:
+public void StartSkillCD(int overrideCDValue = 0, int ratio = 0) { }
+Byte thay thế: C0035FD6
+
+Anti:
+2600A3
+24C059
+263B23
+A0F5C
+2F9D4
+Byte thay thế: C0035FD6

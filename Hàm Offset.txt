@@ -1,0 +1,14 @@
+Mod skin: public bool IsShareSkin(uint heroID, uint skinID) { }
+
+Hủy hồi chiêu: public void StartSkillCD(int overrideCDValue = 0, int ratio = 0) { }
+
+Ẩn tên: public void SetPlayerName(string playerName, string prefixName = "", bool isGuideLevel = False) { }
+
+Autowin: public void SetHpAndEpToInitialValue(int hpPercent = 10000, int epPercent = 10000) { }
+
+FPS1: public static bool CheckDeviceSupport60FPSConfig() { }
+
+FPS2: private static bool CheckDeviceSupport60FPS_CameraHeight_IOS() { }
+
+
+
